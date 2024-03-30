@@ -3,58 +3,83 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import styled from "@mui/material/styles/styled";
 
-const GridContainer = styled(Grid)(({ theme }) => ({
+// ************ Menu ************
+const MainGrid = styled(Grid)(({ theme }) => ({
     "& .MuiGrid-item": {
         marginTop: 5,
         marginBottom: 5
     }
 }));
 
-const HeadingGrid = styled(Grid)(({ theme }) => ({
+// ************ Heading ************
+const HeadingGrid = styled(Grid)({});
+
+const HeadingContainer = styled(Grid)(({ theme }) => ({
     border: "purple 2px solid",
-    textAlign: "center",
     borderRadius: "8px",
     color: "purple",
+    height: "50px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
 }));
 
-const SearchGrid = styled(Grid)(({ theme }) => ({
+// ************ Search ************
+const SearchGrid = styled(Grid)({});
+
+const SearchContainer = styled(Grid)(({ theme }) => ({
     border: "blue 2px solid",
-    textAlign: "center",
     borderRadius: "8px",
     color: "blue",
+    height: "50px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
 }));
 
-const NavGrid = styled(Grid)(({ theme }) => ({
+// ************ Navigation ************
+const NavigationGrid = styled(Grid)({});
+
+const NavigationContainer = styled(Grid)(({ theme }) => ({
     border: "red 2px solid",
-    textAlign: "center",
     borderRadius: "8px",
     color: "red",
+    height: "250px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
 }));
 
-const ContentGrid = styled(Grid)(({ theme }) => ({
+// ************ Content ************
+const ContentGrid = styled(Grid)({});
+
+const ContentContainer = styled(Grid)(({ theme }) => ({
     border: "green 2px solid",
-    textAlign: "center",
     borderRadius: "8px",
     color: "green",
+    height: "400px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
 }));
 
 export default function Menu() {
     return (
         <Container>
-            <GridContainer container>
+            <MainGrid container spacing={1}>
                 <HeadingGrid item xs={12} md={3}>
-                    Heading
+                    <HeadingContainer>Heading</HeadingContainer>
                 </HeadingGrid>
                 <SearchGrid item xs={12} md={9}>
-                    Search
+                    <SearchContainer>Search</SearchContainer>
                 </SearchGrid>
-                <NavGrid item xs={12} md={3}>
-                    Navigation
-                </NavGrid>
+                <NavigationGrid item xs={12} md={3}>
+                    <NavigationContainer>Navigation</NavigationContainer>
+                </NavigationGrid>
                 <ContentGrid item xs={12} md={9}>
-                    Content
+                    <ContentContainer>Content</ContentContainer>
                 </ContentGrid>
-            </GridContainer>
+            </MainGrid>
         </Container>
     );
 }
