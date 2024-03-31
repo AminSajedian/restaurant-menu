@@ -4,11 +4,8 @@ import Container from '@mui/material/Container';
 import styled from "@mui/material/styles/styled";
 
 // ************ Menu ************
-const MainGrid = styled(Grid)(({ theme }) => ({
-    "& .MuiGrid-item": {
-        marginTop: 5,
-        marginBottom: 5
-    }
+const MenuContainer = styled(Container)(({ theme }) => ({
+    marginTop: theme.spacing(1)
 }));
 
 // ************ Heading ************
@@ -65,8 +62,8 @@ const ContentContainer = styled(Grid)(({ theme }) => ({
 
 export default function Menu() {
     return (
-        <Container>
-            <MainGrid container spacing={1}>
+        <MenuContainer>
+            <Grid container spacing={1}>
                 <HeadingGrid item xs={12} md={3}>
                     <HeadingContainer>Heading</HeadingContainer>
                 </HeadingGrid>
@@ -79,7 +76,7 @@ export default function Menu() {
                 <ContentGrid item xs={12} md={9}>
                     <ContentContainer>Content</ContentContainer>
                 </ContentGrid>
-            </MainGrid>
-        </Container>
+            </Grid>
+        </MenuContainer>
     );
 }
