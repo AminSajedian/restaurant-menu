@@ -7,9 +7,11 @@ import Container from '@mui/material/Container';
 import styled from "@mui/material/styles/styled";
 import ListRoundedIcon from "@mui/icons-material/ListRounded";
 
+import SearchIcon from "@mui/icons-material/Search";
+
 // *** Importing Styled Components of each section ***
 import { HeadingGrid, HeadingContainer, MenuHeading } from "./HeadingComponents";
-import { SearchGrid, SearchContainer, } from "./SearchComponents";
+import { SearchGrid, SearchContainer, SearchPaneWrapper, IconWrapper, SearchField, SearchPaneDivider } from "./SearchComponents";
 import { NavigationGrid, NavigationContainer, } from "./NavigationComponents";
 import { ContentGrid, ContentContainer, } from "./ContentComponents";
 
@@ -33,7 +35,21 @@ export default function Menu() {
 
                 {/* Search Section */}
                 <SearchGrid item xs={12} md={9}>
-                    <SearchContainer>Search</SearchContainer>
+                    <SearchContainer>
+                        <SearchPaneWrapper elevation={2} component="form">
+                            <IconWrapper>
+                                <SearchIcon />
+                            </IconWrapper>
+                            <SearchPaneDivider orientation="vertical" />
+                            <SearchField
+                                placeholder="Search in menu"
+                                inputProps={{ "aria-label": "search in menu" }}
+                                type="search"
+                            // value={searchTerm}
+                            // onChange={handleSearchInputChange}
+                            />
+                        </SearchPaneWrapper>
+                    </SearchContainer>
                 </SearchGrid>
 
                 {/* Navigation Section */}
