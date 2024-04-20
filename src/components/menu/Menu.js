@@ -1,11 +1,14 @@
+/*** Menu.js ***/
+
 // Importing React and Material-UI modules
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import styled from "@mui/material/styles/styled";
+import ListRoundedIcon from "@mui/icons-material/ListRounded";
 
 // *** Importing Styled Components of each section ***
-import { HeadingGrid, HeadingContainer, } from "./HeadingComponents";
+import { HeadingGrid, HeadingContainer, MenuHeading } from "./HeadingComponents";
 import { SearchGrid, SearchContainer, } from "./SearchComponents";
 import { NavigationGrid, NavigationContainer, } from "./NavigationComponents";
 import { ContentGrid, ContentContainer, } from "./ContentComponents";
@@ -22,7 +25,10 @@ export default function Menu() {
             <Grid container spacing={1}>
                 {/* Heading Section */}
                 <HeadingGrid item xs={12} md={3}>
-                    <HeadingContainer>Heading</HeadingContainer>
+                    <HeadingContainer>
+                        <ListRoundedIcon />
+                        <MenuHeading variant="h6">Menu</MenuHeading>
+                    </HeadingContainer>
                 </HeadingGrid>
 
                 {/* Search Section */}
